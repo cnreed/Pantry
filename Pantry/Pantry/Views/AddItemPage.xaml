@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             x:Class="Pantry.Views.AddItemPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Item Name"></Label>
+                <Entry x:Name="ItemEntry" Placeholder="Enter Item Name"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Quantity"></Label>
+                <Entry x:Name="QuantityEntry" Placeholder="Enter Quantity" Keyboard="Numeric"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Food Type"></Label>
+                            <Picker Title="Select a Food Type" x:Name="FoodTypePicker" SelectedIndexChanged="OnFoodTypeChosen">
+                            </Picker>
+            </StackLayout>
+            <Button Text="Add Item" x:Name="AddItemPageButton" Clicked="AddItemToPantry"
+                    BackgroundColor="DarkSlateGray" TextColor="White">
+            </Button>
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
