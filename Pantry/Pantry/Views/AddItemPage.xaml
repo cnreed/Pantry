@@ -19,12 +19,12 @@
         <Picker Title="Select a Food Type" x:Name="FoodTypePicker" SelectedIndexChanged="OnFoodTypeChosen">
         </Picker>
       </StackLayout>
-      <StackLayout Orientation="Horizontal">
-        <Label Text="Expiration Date"></Label>
-        <DatePicker VerticalOptions="CenterAndExpand" Date="">
-
-        </DatePicker>
-      </StackLayout>
+<!--      <StackLayout Orientation="Horizontal">-->
+<!--        <Label Text="Expiration Date"></Label>-->
+<!--        <DatePicker VerticalOptions="CenterAndExpand" Date="">-->
+<!---->
+<!--        </DatePicker>-->
+<!--      </StackLayout>-->
       <Button Text="Add Item" x:Name="AddItemPageButton" Clicked="AddItemToPantry"
               BackgroundColor="DarkSlateGray" TextColor="White">
       </Button>

@@ -7,7 +7,7 @@ using Pantry.Models;
 
 namespace Pantry.Gateways.Interfaces
 {
-    interface IItemGateway
+    public interface IItemGateway
     {
         void CreateDatabase(string path);
         int InsertUpdateDatabase(string databasePath, Item item);

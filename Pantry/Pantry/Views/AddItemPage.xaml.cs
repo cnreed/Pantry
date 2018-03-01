@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Pantry.Enums;
+using Pantry.Gateways.Interfaces;
+using Pantry.Services.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +10,7 @@ namespace Pantry.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddItemPage : ContentPage
+
     {
         public Dictionary<string, EnumFoodType> FoodTypes = new Dictionary<string, EnumFoodType>()
         {
@@ -33,7 +36,8 @@ namespace Pantry.Views
 
         private void AddItemToPantry(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+          string databasePath = DependencyService.Get<IDeviceService>().CreateDatabasePath("Item.db");
+          DependencyService.Get<IItemGateway>().CreateDatabase(databasePath);
         }
 
         private void OnFoodTypeChosen(object sender, EventArgs e)
