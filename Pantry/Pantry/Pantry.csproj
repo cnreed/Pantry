@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Enums\EnumFoodType.cs" />
     <Compile Include="Enums\EnumPlaceStored.cs" />
+    <Compile Include="Extensions\EnumFoodTypeExtensions.cs" />
     <Compile Include="Extensions\PlaceStoredExtension.cs" />
     <Compile Include="Gateways\Interfaces\IItemGateway.cs" />
     <Compile Include="Gateways\ItemGateway.cs" />
