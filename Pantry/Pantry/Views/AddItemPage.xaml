@@ -19,6 +19,15 @@
         <Picker Title="Select a Food Type" x:Name="FoodTypePicker" SelectedIndexChanged="OnFoodTypeChosen">
         </Picker>
       </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Storage Location"></Label>
+        <Picker Title="Select where this item is stored" x:Name="PlaceStoredPicker" SelectedIndexChanged="OnPlaceStoredChosen">
+        </Picker>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Barcode"></Label>
+        <Entry x:Name="BarcodeEntry" Placeholder="Enter Barcode" Keyboard="Numeric"></Entry>
+      </StackLayout>
 <!--      <StackLayout Orientation="Horizontal">-->
 <!--        <Label Text="Expiration Date"></Label>-->
 <!--        <DatePicker VerticalOptions="CenterAndExpand" Date="">-->

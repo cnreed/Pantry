@@ -1,48 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Pantry.Enums;
 using Pantry.Gateways.Interfaces;
+using Pantry.Models;
 using Pantry.Services.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Pantry.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddItemPage : ContentPage
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class AddItemPage : ContentPage
+  {
+    private string _foodTypeString;
+    private string _placeStoredString;
 
+    public AddItemPage()
     {
-        public Dictionary<string, EnumFoodType> FoodTypes = new Dictionary<string, EnumFoodType>()
-        {
-            {"Fruit", EnumFoodType.Fruit },
-            {"Vegetables", EnumFoodType.Vegetable },
-            {"Canned", EnumFoodType.Canned },
-            {"Juice", EnumFoodType.Juice },
-            {"Soda", EnumFoodType.Soda },
-            {"Water", EnumFoodType.Water },
-            {"Candy", EnumFoodType.Candy },
-            {"Pasta", EnumFoodType.Pasta },
-            {"Bread", EnumFoodType.Bread },
-            {"Cereal", EnumFoodType.Cereal }
-        };
-        public AddItemPage()
-        {
-            InitializeComponent();
-            foreach (string foodTypesKey in FoodTypes.Keys)
-            {
-                FoodTypePicker.Items.Add(foodTypesKey);
-            }
-        }
+      InitializeComponent();
+      List<EnumFoodType> enumFoodTypes = Enum.GetValues(typeof(EnumFoodType)).Cast<EnumFoodType>().ToList();
+      foreach (EnumFoodType foodTypesKey in enumFoodTypes)
+      {
+        FoodTypePicker.Items.Add(foodTypesKey.ToString());
+      }
 
-        private void AddItemToPantry(object sender, EventArgs e)
-        {
-          string databasePath = DependencyService.Get<IDeviceService>().CreateDatabasePath("Item.db");
-          DependencyService.Get<IItemGateway>().CreateDatabase(databasePath);
-        }
-
-        private void OnFoodTypeChosen(object sender, EventArgs e)
-        {
-            string selectedItem = (string)FoodTypePicker.SelectedItem;
-        }
+      List<EnumPlaceStored> enumPlaceStoreds = Enum.GetValues(typeof(EnumPlaceStored)).Cast<EnumPlaceStored>().ToList();
+      foreach (EnumPlaceStored enumPlaceStored in enumPlaceStoreds)
+      {
+        PlaceStoredPicker.Items.Add(enumPlaceStored.ToString());
+      }
     }
+
+    private void AddItemToPantry(object sender, EventArgs e)
+    {
+      Item item = new Item()
+      {
+        Barcode = BarcodeEntry.Text,
+        FoodType = EnumFoodType.Candy,
+        IsFrozen = false,
+        Name = ItemEntry.Text,
+        PlaceStored = EnumPlaceStored.Cabinent,
+        Quantity = Convert.ToInt32(QuantityEntry.Text),
+        StorageLocation = "UNKNWN"
+      };
+
+      string databasePath = DependencyService.Get<IDeviceService>().CreateDatabasePath("Item.db");
+      DependencyService.Get<IItemGateway>().CreateDatabase(databasePath);
+      DependencyService.Get<IItemGateway>().InsertUpdateDatabase(databasePath, item);
+    }
+
+    private void OnFoodTypeChosen(object sender, EventArgs e)
+    {
+      _foodTypeString = (string) FoodTypePicker.SelectedItem;
+    }
+
+    private void OnPlaceStoredChosen(object sender, EventArgs e)
+    {
+      _placeStoredString = (string) PlaceStoredPicker.SelectedItem;
+    }
+  }
 }
