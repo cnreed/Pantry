@@ -32,6 +32,8 @@ namespace Pantry.iOS.Models
   
     public String Product_Name { get; set; }
 
+    public string Ingredients_Text { get; set; }
+
 //    [DeserializeAs(Name = "states")] public string States { get; set; }
 //    [DeserializeAs(Name = "brands")] public string Brands { get; set; }
 //
