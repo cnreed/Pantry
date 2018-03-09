@@ -95,6 +95,8 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\Ingredients.cs" />
+    <Compile Include="Models\NutrientLevels.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Sources.cs" />
     <Compile Include="Services\DeviceService.cs" />
@@ -185,7 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pantry\Pantry.csproj">
-      <Project>{689da390-7d5e-4970-83dd-2a071cbbc850}</Project>
+      <Project>{1bad881d-1fbc-42a7-bd03-2bced2110bd4}</Project>
       <Name>Pantry</Name>
     </ProjectReference>
   </ItemGroup>

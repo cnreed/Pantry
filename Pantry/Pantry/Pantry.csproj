@@ -43,7 +43,7 @@
     <Compile Include="Gateways\Interfaces\IItemGateway.cs" />
     <Compile Include="Gateways\ItemGateway.cs" />
     <Compile Include="ISqlLite.cs" />
-    <Compile Include="Models\Doof.cs" />
+    <Compile Include="Models\OpenFood.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Sources.cs" />

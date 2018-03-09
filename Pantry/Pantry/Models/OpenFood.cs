@@ -1,7 +1,7 @@
 ﻿
 namespace Pantry.Models
 {
-  public class Doof
+  public class OpenFood
   {
     public Product Product { get; set; }
     public string StatusVerbose { get; set; }

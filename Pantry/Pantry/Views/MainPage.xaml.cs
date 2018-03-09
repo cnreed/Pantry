@@ -33,7 +33,7 @@ namespace Pantry
         scannerPage.IsScanning = false;
         Device.BeginInvokeOnMainThread(async () =>
         {
-          await Navigation.PopAsync();
+//          await Navigation.PopAsync();
 //          await DisplayAlert("Scanner Barcode", result.Text, "Ok");
           ScanResultPage scanResultPage = new ScanResultPage(result.Text);
           //          scanResultPage.Barcode = result.Text;
