@@ -53,7 +53,8 @@ namespace Pantry.iOS.Clients
         StatusVerbose = food.StatusVerbose,
         Product = new Pantry.Models.Product()
         {
-          ProductName = food.Product.Product_Name
+          ProductName = food.Product?.Product_Name,
+          Ingredients = food.Product?.Ingredients_Text
         }
       };
     }

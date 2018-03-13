@@ -5,5 +5,6 @@ namespace Pantry.Models
   {
     public Sources Sources { get; set; }
     public string ProductName { get; set; }
+    public string Ingredients { get; set; }
   }
 }

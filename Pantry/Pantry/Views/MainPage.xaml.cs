@@ -14,6 +14,17 @@ namespace Pantry
     public MainPage()
     {
       InitializeComponent();
+      
+    }
+
+    protected override void OnAppearing()
+    {
+      base.OnAppearing();
+      if (Loading.IsRunning)
+      {
+        Loading.IsRunning = false;
+        LoadingLabel.IsVisible = false;
+      }
     }
 
     private void OnAddItem(object sender, EventArgs e)
@@ -33,7 +44,9 @@ namespace Pantry
         scannerPage.IsScanning = false;
         Device.BeginInvokeOnMainThread(async () =>
         {
-//          await Navigation.PopAsync();
+          Loading.IsRunning = true;
+          LoadingLabel.IsVisible = true;
+          await Navigation.PopAsync();
 //          await DisplayAlert("Scanner Barcode", result.Text, "Ok");
           ScanResultPage scanResultPage = new ScanResultPage(result.Text);
           //          scanResultPage.Barcode = result.Text;
