@@ -6,15 +6,16 @@
 <!--  <ContentPage.Content>-->
     <StackLayout Orientation="Vertical">
       <Label Text="Is this the product?" />
-    </StackLayout>
-    <StackLayout Orientation="Vertical">
+    
+    <StackLayout>
       <Label x:Name="ProductNameLabel" />
       <Label x:Name="BarcodeLabel" />
       <Label x:Name="IngredientsLabel"/>
       <StackLayout Orientation="Horizontal">
-        <Button x:Name="YesButton" Text="Yes" BackgroundColor="LightGray" Clicked="YesButtonOnCliecked"></Button>
-        <Button x:Name="NoButton" Text="No" BackgroundColor="LightSlateGray" Clicked="NoButtonOnClicked"></Button>
+        <Button x:Name="YesButton" Text="Yes" BackgroundColor="LightGray" TextColor="Black" Clicked="YesButtonOnCliecked"></Button>
+        <Button x:Name="NoButton" Text="No" BackgroundColor="LightSlateGray" TextColor="White"  Clicked="NoButtonOnClicked"></Button>
       </StackLayout>
     </StackLayout>
+      </StackLayout>
 <!--  </ContentPage.Content>-->
 </ContentPage>
