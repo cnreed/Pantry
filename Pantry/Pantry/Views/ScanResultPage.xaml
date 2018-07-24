@@ -12,8 +12,8 @@
       <Label x:Name="BarcodeLabel" />
       <Label x:Name="IngredientsLabel"/>
       <StackLayout Orientation="Horizontal">
-        <Button x:Name="YesButton" Text="Yes" Clicked="YesButtonOnCliecked"></Button>
-        <Button x:Name="NoButton" Text="No" Clicked="NoButtonOnClicked"></Button>
+        <Button x:Name="YesButton" Text="Yes" BackgroundColor="LightGray" Clicked="YesButtonOnCliecked"></Button>
+        <Button x:Name="NoButton" Text="No" BackgroundColor="LightSlateGray" Clicked="NoButtonOnClicked"></Button>
       </StackLayout>
     </StackLayout>
 <!--  </ContentPage.Content>-->
