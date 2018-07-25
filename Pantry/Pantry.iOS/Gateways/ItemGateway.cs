@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Pantry.Gateways.Interfaces;
 using Pantry.iOS.Gateways;
@@ -13,9 +14,13 @@ namespace Pantry.iOS.Gateways
   {
     public void CreateDatabase(SQLiteConnection connection)
     {
-
-        connection.CreateTable<Item>();
-      
+            try
+            {
+                connection.CreateTable<Item>();
+            }
+            catch(Exception e) {
+                Console.WriteLine(e.Message);
+            }
     }
 
     public int InsertUpdateDatabase(SQLiteConnection connection, Item item)

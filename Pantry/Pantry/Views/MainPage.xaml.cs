@@ -17,9 +17,10 @@ namespace Pantry
     public MainPage()
     {
       InitializeComponent();
-      SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
+      
       if (!DependencyService.Get<IDeviceService>().ItemDbExists())
       {
+        SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
         DependencyService.Get<IItemGateway>().CreateDatabase(connection);
       }
 
