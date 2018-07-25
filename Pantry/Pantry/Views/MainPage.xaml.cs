@@ -58,7 +58,7 @@ namespace Pantry
 
     private void OnViewPantry(object sender, EventArgs e)
     {
-//      Navigation.PushAsync(new ViewPantry());
+      Navigation.PushAsync(new ViewPantry());
     }
   }
 }

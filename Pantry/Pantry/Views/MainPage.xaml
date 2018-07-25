@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -8,13 +8,13 @@
     <Label Text="Pantry? What's there to eat?"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
-    <StackLayout Orientation="Horizontal">
+    <StackLayout Orientation="Vertical">
       <Button x:Name="AddItem" WidthRequest="125" Text="Add Item" BackgroundColor="Gray" TextColor="Black"
               Clicked="OnAddItem" />
       <Button x:Name="RemoveItem" WidthRequest="125" Text="Remove Item" BackgroundColor="LightGray"
               Clicked="OnRemoveItem" />
       <Button x:Name="ScanItem" WidthRequest="125" Text="Scan an Item" BackgroundColor="Gray" Clicked="OnScanItem" />
-      <Button x:Name="ViewPantry" Width="125" Text="View Pantry" BackgroundColor="SlateGray" Clicked="OnViewPantry"></Button>
+      <Button x:Name="ViewPantry" WidthRequest="125" Text="View Pantry" BackgroundColor="SlateGray" Clicked="OnViewPantry"></Button>
     </StackLayout>
     <StackLayout Orientation="Vertical">
       <Label x:Name="LoadingLabel" Text="Getting your item, please wait..." IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center"></Label>

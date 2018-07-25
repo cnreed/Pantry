@@ -18,6 +18,7 @@ namespace Pantry.Views
     {
       InitializeComponent();
 
+
       Items = new ObservableCollection<string>
             {
                 "Item 1",

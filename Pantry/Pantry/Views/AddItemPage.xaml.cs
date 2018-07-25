@@ -47,7 +47,8 @@ namespace Pantry.Views
 
       string databasePath = DependencyService.Get<IDeviceService>().CreateDatabasePath("Item.db");
       DependencyService.Get<IItemGateway>().CreateDatabase(databasePath);
-      DependencyService.Get<IItemGateway>().InsertUpdateDatabase(databasePath, item);
+            DependencyService.Get<IItemGateway>().InsertUpdateDatabase(databasePath, item);
+            Navigation.PopAsync();
     }
 
     private void OnFoodTypeChosen(object sender, EventArgs e)

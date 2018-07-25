@@ -64,6 +64,7 @@
     <Compile Include="Views\ViewPantry.xaml.cs">
       <DependentUpon>ViewPantry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Database.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">

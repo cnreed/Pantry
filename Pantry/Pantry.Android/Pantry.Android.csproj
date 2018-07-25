@@ -37,9 +37,6 @@
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -237,7 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pantry\Pantry.csproj">
-      <Project>{689da390-7d5e-4970-83dd-2a071cbbc850}</Project>
+      <Project>{1BAD881D-1FBC-42A7-BD03-2BCED2110BD4}</Project>
       <Name>Pantry</Name>
     </ProjectReference>
   </ItemGroup>
