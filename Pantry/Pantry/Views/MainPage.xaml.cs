@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pantry.Gateways.Interfaces;
+using Pantry.Services.Interfaces;
 using Pantry.Views;
+using SQLite;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 
@@ -14,7 +17,12 @@ namespace Pantry
     public MainPage()
     {
       InitializeComponent();
-      
+      SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
+      if (!DependencyService.Get<IDeviceService>().ItemDbExists())
+      {
+        DependencyService.Get<IItemGateway>().CreateDatabase(connection);
+      }
+
     }
 
     protected override void OnAppearing()

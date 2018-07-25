@@ -11,50 +11,45 @@ namespace Pantry.iOS.Gateways
 
   public class ItemGateway : IItemGateway
   {
-    public void CreateDatabase(string path)
+    public void CreateDatabase(SQLiteConnection connection)
     {
-      using (SQLiteConnection connection = new SQLiteConnection(path))
-      {
+
         connection.CreateTable<Item>();
-      }
+      
     }
 
-    public int InsertUpdateDatabase(string databasePath, Item item)
+    public int InsertUpdateDatabase(SQLiteConnection connection, Item item)
     {
-      using (SQLiteConnection connction = new SQLiteConnection(databasePath))
-      {
-        int id = connction.Insert(item);
+     
+        int id = connection.Insert(item);
         if (id != 0)
         {
           return id;
         }
-      }
+      
 
       return 0;
     }
 
-    public IList<Item> GetItems(string databasePath)
+    public IList<Item> GetItems(SQLiteConnection connection)
     {
-      using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-      {
+      
         TableQuery<Item> itemQuery = from item in connection.Table<Item>() select item;
         return itemQuery.ToList();
-      }
+      
     }
 
-    public IList<Item> GetItems(string databasePath, string name)
+    public IList<Item> GetItems(SQLiteConnection connection, string name)
     {
-      using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-      {
+   
         TableQuery<Item> itemQuery = from item in connection.Table<Item>() where item.Name.Contains(name) select item;
         return itemQuery.ToList();
-      }
+      
     }
 
-    public Item GetItem(string databasePath, string barcode)
+    public Item GetItem(SQLiteConnection connection, string barcode)
     {
-      using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-      {
+   
         TableQuery<Item> itemQuery = from item in connection.Table<Item>() where item.Barcode == barcode select item;
         if (itemQuery.ToList().Count == 0)
         {
@@ -64,7 +59,7 @@ namespace Pantry.iOS.Gateways
         {
           return itemQuery.ToList()[0];
         }
-      }
+      
     }
   }
 }

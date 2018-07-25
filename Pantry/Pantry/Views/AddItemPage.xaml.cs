@@ -5,6 +5,7 @@ using Pantry.Enums;
 using Pantry.Gateways.Interfaces;
 using Pantry.Models;
 using Pantry.Services.Interfaces;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -45,9 +46,8 @@ namespace Pantry.Views
         StorageLocation = "UNKNWN"
       };
 
-      string databasePath = DependencyService.Get<IDeviceService>().CreateDatabasePath("Item.db");
-      DependencyService.Get<IItemGateway>().CreateDatabase(databasePath);
-            DependencyService.Get<IItemGateway>().InsertUpdateDatabase(databasePath, item);
+      SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
+            DependencyService.Get<IItemGateway>().InsertUpdateDatabase(connection, item);
             Navigation.PopAsync();
     }
 

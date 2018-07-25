@@ -13,6 +13,7 @@ namespace Pantry.Views
       InitializeComponent();
       Xamarin.Forms.DependencyService.Register<IItemGateway>();
       DependencyService.Register<IDeviceService>();
+      DependencyService.Register<IDatabase>();
 //      Container.RegisterType<IItemGateway, ItemGateway>();
       MainPage = new NavigationPage(new MainPage());
     }

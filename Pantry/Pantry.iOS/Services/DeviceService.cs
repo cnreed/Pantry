@@ -20,6 +20,11 @@ namespace Pantry.iOS.Services
       return Path.Combine(libFolder, fileName);
     }
 
+    public bool ItemDbExists()
+    {
+      return File.Exists(Database.Path);
+    }
+
     public bool PathExists(string path)
     {
       return Directory.Exists(path);
