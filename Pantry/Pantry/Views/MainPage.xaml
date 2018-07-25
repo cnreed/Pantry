@@ -14,6 +14,7 @@
       <Button x:Name="RemoveItem" WidthRequest="125" Text="Remove Item" BackgroundColor="LightGray"
               Clicked="OnRemoveItem" />
       <Button x:Name="ScanItem" WidthRequest="125" Text="Scan an Item" BackgroundColor="Gray" Clicked="OnScanItem" />
+      <Button x:Name="ViewPantry" Width="125" Text="View Pantry" BackgroundColor="SlateGray" Clicked="OnViewPantry"></Button>
     </StackLayout>
     <StackLayout Orientation="Vertical">
       <Label x:Name="LoadingLabel" Text="Getting your item, please wait..." IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center"></Label>

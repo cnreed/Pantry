@@ -55,5 +55,10 @@ namespace Pantry
       };
       Navigation.PushAsync(scannerPage);
     }
+
+    private void OnViewPantry(object sender, EventArgs e)
+    {
+//      Navigation.PushAsync(new ViewPantry());
+    }
   }
 }
