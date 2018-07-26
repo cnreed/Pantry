@@ -19,12 +19,12 @@ namespace Pantry.iOS
           {
             string docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string libFolder = System.IO.Path.Combine(docFolder, "..", "Library", "Pantry/Databases");
-            if (!Directory.Exists(libFolder))
-            {
-              Directory.CreateDirectory(libFolder);
-            }
-
-            return $"{libFolder}\\Item.db";
+                    if (!Directory.Exists(libFolder))
+                    {
+                        Directory.CreateDirectory(libFolder);
+                    }
+                    _path = $"{libFolder}\\Item.db";
+            return _path;
           }
 
           return _path;
