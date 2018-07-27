@@ -24,7 +24,7 @@ namespace Pantry.Views
 
       SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
       Items = DependencyService.Get<IItemGateway>().GetItemsObservable(connection);
-      BindingContext = Items;
+      BindingContext = Items; //TODO - Hello
       MyListView.ItemsSource = Items;
     }
 
