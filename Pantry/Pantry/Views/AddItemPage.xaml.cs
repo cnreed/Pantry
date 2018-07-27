@@ -66,7 +66,7 @@ namespace Pantry.Views
     {
       
       _expirationDatePicked = ExpirationDatePicker.Date;
-      if (_expirationDatePicked >= DateTime.Today)
+      if (_expirationDatePicked <= DateTime.Today)
       {
         DisplayAlert("Warning",
           "The Date selected indicates that this item has already expired. Please throw away the food or enter a new expiration date",
