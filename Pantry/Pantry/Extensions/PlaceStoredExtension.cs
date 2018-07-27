@@ -24,5 +24,14 @@ namespace Pantry.Extensions
                     return "UNKWN";
             }
         }
+
+        public static EnumPlaceStored GetPlaceStored(this string enumString) {
+
+
+            switch(enumString) {
+                
+            }
+            return EnumPlaceStored.Cabinent;
+        }
     }
 }

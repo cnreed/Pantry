@@ -36,15 +36,16 @@ namespace Pantry.Views
 
     private void AddItemToPantry(object sender, EventArgs e)
     {
-      Item item = new Item()
-      {
-        Barcode = BarcodeEntry.Text,
-        FoodType = EnumFoodType.Candy,
-        IsFrozen = false,
-        Name = ItemEntry.Text,
-        PlaceStored = EnumPlaceStored.Cabinent,
-        Quantity = Convert.ToInt32(QuantityEntry.Text),
-        StorageLocation = "UNKNWN"
+            Item item = new Item()
+            {
+                Barcode = BarcodeEntry.Text,
+                FoodType = EnumFoodType.Water,
+                IsFrozen = false,
+                Name = ItemEntry.Text,
+                PlaceStored = EnumPlaceStored.Cabinent,
+                Quantity = Convert.ToInt32(QuantityEntry.Text),
+                StorageLocation = "UNKNWN",
+                ExpirationDate = _expirationDatePicked
       };
 
       SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
@@ -66,7 +67,7 @@ namespace Pantry.Views
     {
       
       _expirationDatePicked = ExpirationDatePicker.Date;
-      if (_expirationDatePicked <= DateTime.Today)
+      if (_expirationDatePicked <= DateTime.Today.AddDays(-1))
       {
         DisplayAlert("Warning",
           "The Date selected indicates that this item has already expired. Please throw away the food or enter a new expiration date",
