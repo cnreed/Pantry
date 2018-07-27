@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Pantry.Gateways.Interfaces;
+using Pantry.Models;
+using SQLite;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace Pantry.Views
@@ -12,21 +16,14 @@ namespace Pantry.Views
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class ViewPantry : ContentPage
   {
-    public ObservableCollection<string> Items { get; set; }
+    public ObservableCollection<Item> Items { get; set; }
 
     public ViewPantry()
     {
       InitializeComponent();
 
-
-      Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
+      SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
+      Items = DependencyService.Get<IItemGateway>().GetItemsObservable(connection);
 
       MyListView.ItemsSource = Items;
     }
