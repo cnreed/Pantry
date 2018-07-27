@@ -15,6 +15,10 @@
         <Entry x:Name="QuantityEntry" Placeholder="Enter Quantity" Keyboard="Numeric"></Entry>
       </StackLayout>
       <StackLayout Orientation="Horizontal">
+        <Label Text="Expiration Date"></Label>
+        <DatePicker x:Name="ExpirationDatePicker" DateSelected="ExpirationDateSelected"></DatePicker>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
         <Label Text="Food Type"></Label>
         <Picker Title="Select a Food Type" x:Name="FoodTypePicker" SelectedIndexChanged="OnFoodTypeChosen">
         </Picker>

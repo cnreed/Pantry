@@ -16,6 +16,7 @@ namespace Pantry.Views
   {
     private string _foodTypeString;
     private string _placeStoredString;
+    private DateTime? _expirationDatePicked;
 
     public AddItemPage()
     {
@@ -59,6 +60,18 @@ namespace Pantry.Views
     private void OnPlaceStoredChosen(object sender, EventArgs e)
     {
       _placeStoredString = (string) PlaceStoredPicker.SelectedItem;
+    }
+
+    private void ExpirationDateSelected(object sender, DateChangedEventArgs e)
+    {
+      
+      _expirationDatePicked = ExpirationDatePicker.Date;
+      if (_expirationDatePicked >= DateTime.Today)
+      {
+        DisplayAlert("Warning",
+          "The Date selected indicates that this item has already expired. Please throw away the food or enter a new expiration date",
+          "Okay");
+      }
     }
   }
 }
