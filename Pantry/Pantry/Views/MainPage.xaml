@@ -9,16 +9,25 @@
            VerticalOptions="Center"
            HorizontalOptions="Center" />
     <StackLayout Orientation="Vertical">
-      <Button x:Name="AddItem" WidthRequest="125" Text="Add Item" BackgroundColor="Gray" TextColor="Black"
+      <Button x:Name="AddItem" WidthRequest="125" Text="Add Item" 
+              BackgroundColor="Gray" TextColor="White"
               Clicked="OnAddItem" />
-      <Button x:Name="RemoveItem" WidthRequest="125" Text="Remove Item" BackgroundColor="LightGray"
+      <Button x:Name="RemoveItem" WidthRequest="125" Text="Remove Item" 
+              BackgroundColor="LightGray" TextColor="White"
               Clicked="OnRemoveItem" />
-      <Button x:Name="ScanItem" WidthRequest="125" Text="Scan an Item" BackgroundColor="Gray" Clicked="OnScanItem" />
-      <Button x:Name="ViewPantry" WidthRequest="125" Text="View Pantry" BackgroundColor="SlateGray" Clicked="OnViewPantry"></Button>
+      <Button x:Name="ScanItem" WidthRequest="125" Text="Scan an Item" 
+              BackgroundColor="Gray" TextColor="White" Clicked="OnScanItem" />
+      <Button x:Name="ViewPantry" WidthRequest="125" Text="View Pantry" 
+              BackgroundColor="SlateGray" TextColor="White" Clicked="OnViewPantry"></Button>
     </StackLayout>
     <StackLayout Orientation="Vertical">
-      <Label x:Name="LoadingLabel" Text="Getting your item, please wait..." IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-      <ActivityIndicator x:Name="Loading" IsRunning="False" VerticalOptions="Center" HorizontalOptions="Center"></ActivityIndicator>
+      <Label x:Name="LoadingLabel" Text="Getting your item, please wait..." 
+             IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center">
+      </Label>
+      <ActivityIndicator x:Name="Loading" IsRunning="False" 
+                         VerticalOptions="Center" HorizontalOptions="Center">
+                
+      </ActivityIndicator>
     </StackLayout>
   </StackLayout>
 
