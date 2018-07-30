@@ -25,7 +25,12 @@ namespace Pantry.Views
 
     private void YesButtonOnCliecked(object sender, EventArgs e)
     {
-      AddItemPage addItem = new AddItemPage();
+            Item item = new Item()
+            {
+                Name = ProductNameLabel.Text,
+                Barcode = BarcodeLabel.Text
+            };
+      AddItemPage addItem = new AddItemPage(item);
       Navigation.PushAsync(addItem);
     }
 

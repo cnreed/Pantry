@@ -19,6 +19,28 @@ namespace Pantry.Views
     private string _placeStoredString;
     private DateTime? _expirationDatePicked;
 
+        public AddItemPage(Item item) {
+            InitializeComponent();
+            List<EnumFoodType> enumFoodTypes = Enum.GetValues(typeof(EnumFoodType)).Cast<EnumFoodType>().ToList();
+            foreach (EnumFoodType foodTypesKey in enumFoodTypes)
+            {
+                FoodTypePicker.Items.Add(foodTypesKey.ToString());
+            }
+
+            List<EnumPlaceStored> enumPlaceStoreds = Enum.GetValues(typeof(EnumPlaceStored)).Cast<EnumPlaceStored>().ToList();
+            foreach (EnumPlaceStored enumPlaceStored in enumPlaceStoreds)
+            {
+                PlaceStoredPicker.Items.Add(enumPlaceStored.ToString());
+            }
+            BarcodeEntry.Text = item.Barcode;
+            FoodTypePicker.SelectedItem = item.FoodType.ToString();
+            ItemEntry.Text = item.Name;
+            PlaceStoredPicker.SelectedItem = item.PlaceStored.ToString();
+            QuantityEntry.Text = item.Quantity.ToString();
+            ExpirationDatePicker.Date = item.ExpirationDate.HasValue ? item.ExpirationDate.Value : DateTime.Today;
+
+        }
+
     public AddItemPage()
     {
       InitializeComponent();

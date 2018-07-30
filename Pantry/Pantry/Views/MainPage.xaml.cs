@@ -47,8 +47,8 @@ namespace Pantry
 
     private void OnScanItem(object sender, EventArgs e)
     {
-      ZXingScannerPage scannerPage = new ZXingScannerPage();
-     
+            ZXingScannerPage scannerPage = new ZXingScannerPage();
+
       scannerPage.OnScanResult += result =>
       {
         scannerPage.IsScanning = false;
