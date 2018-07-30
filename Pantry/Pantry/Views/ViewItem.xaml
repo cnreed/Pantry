@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Pantry.Views.ViewItem">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Name:"></Label>
+                <Label x:Name="ItemName"></Label>
+                <Label Text="Quantity:"></Label>
+                <Label x:Name="ItemQuantity"></Label>
+                <Label Text="Expiration Date"></Label>
+                <Label x:Name="ItemExpirationDate"></Label>
+                <Label Text="Barcode:"></Label>
+                <Label x:Name="ItemBarcode"></Label>
+                <Label Text="Ingredients:"></Label>
+                <Label x:Name="ItemIngredients"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

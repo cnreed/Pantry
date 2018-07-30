@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Pantry.Enums;
+using Pantry.Extensions;
 using Pantry.Gateways.Interfaces;
 using Pantry.Models;
 using Pantry.Services.Interfaces;
@@ -39,10 +40,10 @@ namespace Pantry.Views
             Item item = new Item()
             {
                 Barcode = BarcodeEntry.Text,
-                FoodType = EnumFoodType.Water,
+                FoodType = _foodTypeString.GetEnumFoodType(),
                 IsFrozen = false,
                 Name = ItemEntry.Text,
-                PlaceStored = EnumPlaceStored.Cabinent,
+                PlaceStored = _placeStoredString.GetPlaceStored(),
                 Quantity = Convert.ToInt32(QuantityEntry.Text),
                 StorageLocation = "UNKNWN",
                 ExpirationDate = _expirationDatePicked

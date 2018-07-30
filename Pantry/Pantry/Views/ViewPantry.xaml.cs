@@ -33,9 +33,11 @@ namespace Pantry.Views
       if (e.Item == null)
         return;
 
-      await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+      ViewItem viewItem = new ViewItem((Item)e.Item);
+      await Navigation.PushAsync(viewItem);
+      //await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
 
-      //Deselect Item
+      ////Deselect Item
       ((ListView)sender).SelectedItem = null;
     }
   }
