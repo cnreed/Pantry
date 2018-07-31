@@ -18,9 +18,11 @@ namespace Pantry.Views
     private string _foodTypeString;
     private string _placeStoredString;
     private DateTime? _expirationDatePicked;
+        private Item _item;
 
         public AddItemPage(Item item) {
             InitializeComponent();
+            _item = item;
             List<EnumFoodType> enumFoodTypes = Enum.GetValues(typeof(EnumFoodType)).Cast<EnumFoodType>().ToList();
             foreach (EnumFoodType foodTypesKey in enumFoodTypes)
             {
@@ -73,7 +75,12 @@ namespace Pantry.Views
 
       SQLiteConnection connection = DependencyService.Get<IDatabase>().Connection;
             DependencyService.Get<IItemGateway>().InsertUpdateDatabase(connection, item);
-            Navigation.PopAsync();
+            if(_item != null) {
+                Navigation.PopToRootAsync();
+            }
+            else {
+                Navigation.PopAsync();
+            }
     }
 
     private void OnFoodTypeChosen(object sender, EventArgs e)
