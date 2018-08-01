@@ -13,6 +13,7 @@
                 <Label x:Name="ItemBarcode"></Label>
                 <Label Text="Ingredients:"></Label>
                 <Label x:Name="ItemIngredients"></Label>
+                <Button WidthRequest="25" Text="Edit Item"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
