@@ -17,9 +17,11 @@ namespace Pantry.Views
     public ScanResultPage(string barcode)
     {
       InitializeComponent();
-      BarcodeLabel.Text = "Barcode Text: " + barcode;
+      BarcodeLabel.Text = "Barcode Text: ";
+      BarcodeScanResult.Text = barcode;
       OpenFood openFood = DependencyService.Get<IProductClient>().GetOpenFood(barcode);
-      ProductNameLabel.Text = "Is this your product? " + openFood.Product?.ProductName;
+      ProductNameLabel.Text = "Is this your product? ";
+      ProductScanResult.Text = openFood.Product?.ProductName;
       IngredientsLabel.Text = "Ingredients: " + openFood.Product?.Ingredients;
     }
 

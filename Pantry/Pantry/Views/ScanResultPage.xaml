@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -8,8 +8,15 @@
       <Label Text="Is this the product?" />
     
     <StackLayout>
-      <Label x:Name="ProductNameLabel" />
-      <Label x:Name="BarcodeLabel" />
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="ProductNameLabel" />
+                <Label x:Name="ProductScanResult" />
+            </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label x:Name="BarcodeLabel" />
+        <Label x:Name="BarcodeScanResult"/>
+      </StackLayout>
+
       <Label x:Name="IngredientsLabel"/>
       <StackLayout Orientation="Horizontal">
         <Button x:Name="YesButton" Text="Yes" BackgroundColor="LightGray" TextColor="Black" Clicked="YesButtonOnCliecked"></Button>
