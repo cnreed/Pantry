@@ -30,7 +30,8 @@ namespace Pantry.Views
             Item item = new Item()
             {
                 Name = ProductNameLabel.Text,
-                Barcode = BarcodeLabel.Text
+                Barcode = BarcodeLabel.Text,
+                Quantity = 1
             };
       AddItemPage addItem = new AddItemPage(item);
       Navigation.PushAsync(addItem);

@@ -38,7 +38,7 @@ namespace Pantry.Views
             FoodTypePicker.SelectedItem = item.FoodType.ToString();
             ItemEntry.Text = item.Name;
             PlaceStoredPicker.SelectedItem = item.PlaceStored.ToString();
-            QuantityEntry.Text = "1";
+            QuantityEntry.Text =  item.Quantity > 0 ? item.Quantity.ToString() : "1";
             ExpirationDatePicker.Date = item.ExpirationDate.HasValue ? item.ExpirationDate.Value : DateTime.Today;
 
         }
